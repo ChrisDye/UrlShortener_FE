@@ -1,0 +1,10 @@
+<div class="panel">
+    <app-url-generate (completeCallback)="rebindList()"></app-url-generate>
+</div>
+<div class="panel" *ngIf="urls !== null" >
+    <app-url-list (rebindCallback)="rebindList()" [urls]="urls"></app-url-list>
+    <div class="btnContainer">
+        <a class="btn prev" *ngIf="urls.hasPreviousPage" (click)="prevPage()">Previous</a>
+        <a class="btn next" *ngIf="urls.hasNextPage" (click)="nextPage()">Next</a>
+    </div>
+</div>

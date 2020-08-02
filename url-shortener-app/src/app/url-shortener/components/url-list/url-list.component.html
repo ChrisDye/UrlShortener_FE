@@ -1,0 +1,21 @@
+<div class="urlContainer">
+    <div class="table">
+        <div class="row header">
+            <div class="col-item"><strong>Actual Url</strong></div>
+            <div class="col-item"><strong>Shortened Url</strong></div>
+            <div class="col-item"><strong>Times Accessed</strong></div>
+            <div class="col-item"></div>
+        </div>
+
+        <div class="row" *ngFor="let url of urls.items">
+            <div class="col-item">{{url.actualUrl}}</div>
+            <div class="col-item"><a [routerLink]="'/' + url.shortenedUrl">{{appUrl + url.shortenedUrl}}</a></div>
+            <div class="col-item">{{url.accessCount}}</div>
+            <div class="col-item">
+                <a class="btn" (click)="editUrl(url)">Edit</a>
+                <a class="btn remove" (click)="deleteUrl(url.id)">Delete</a>
+            </div>
+        </div> 
+    </div>
+
+</div>

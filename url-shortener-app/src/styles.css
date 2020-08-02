@@ -1,0 +1,95 @@
+/* You can add global styles to this file, and also import other style files */
+
+.panel {
+    margin-bottom: 8px;
+}
+
+.center {
+    text-align: center;
+}
+
+.urlInputContainer {
+    display: flex;
+}
+
+.urlInput {
+    width: 100%;
+}
+
+.urlContainer {
+    border: 1px gray solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: none;
+    padding: 16px;
+}
+
+/* 
+TABLE CSS STYLES
+*/
+
+.table {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row {
+    padding: 16px;
+    width: 100%;
+    display: flex;
+    border-bottom: 1px rgba(128, 128, 128, 0.5) solid;
+}
+
+.row.header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.col-item {
+    flex-grow: 1;
+    width: 50%;
+}
+
+@media (max-width: 960px) {
+    .row {
+        display: block;
+    }
+}
+
+/*
+BUTTON CSS STYLES
+*/
+
+.btnContainer {
+    display: flex;
+}
+
+.btnContainer .btn {
+    flex: auto;
+    text-align: center;
+}
+
+.btn {
+    color: white;
+    background-color: rgb(0, 132, 255);
+    border: 1px rgb(0, 0, 0) solid;
+    padding: 8px 20px;
+}
+
+.btn:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.btn.next {
+    float: right;
+}
+
+.btn.prev {
+    float: left;
+}
+
+.btn.remove {
+    background-color: rgb(190, 40, 20);
+}

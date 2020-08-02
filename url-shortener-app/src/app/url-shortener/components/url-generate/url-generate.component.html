@@ -1,0 +1,8 @@
+{{message}}
+<div class="urlInputContainer">
+    <input [(ngModel)]="enteredUrl" class="urlInput" placeholder="Please enter the Url you wish to shorten." type="text">
+    <a class="btn" (click)="generate()">Generate</a>
+</div>
+<div class="center" *ngIf="urlResult !== null">
+    <a>{{appUrl + urlResult.shortenedUrl }}</a>
+</div>
