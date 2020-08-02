@@ -1,1 +1,11 @@
-Edit works
+<div *ngIf="url !== null" class="editForm">
+    <div class="editPanel">
+        <h2>Change the URL this link should redirect to</h2>
+        <p *ngIf="message !== null">{{message}}</p>
+        <input type="text" class="editUrl" [(ngModel)]="url.actualUrl">
+        <div class="btnActions">
+            <a (click)="update()" class="btn">Update</a>
+            <a (click)="close()" class="btn">Close</a>
+        </div>
+    </div>
+</div>

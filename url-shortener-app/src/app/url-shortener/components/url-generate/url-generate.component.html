@@ -3,6 +3,6 @@
     <input [(ngModel)]="enteredUrl" class="urlInput" placeholder="Please enter the Url you wish to shorten." type="text">
     <a class="btn" (click)="generate()">Generate</a>
 </div>
-<div class="center" *ngIf="urlResult !== null">
-    <a>{{appUrl + urlResult.shortenedUrl }}</a>
+<div class="resultUrl center" *ngIf="urlResult !== null">
+    <a [routerLink]="'/' + urlResult.shortenedUrl">{{appUrl + urlResult.shortenedUrl}}</a>
 </div>

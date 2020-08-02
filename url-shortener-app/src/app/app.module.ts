@@ -10,6 +10,7 @@ import { UrlShortenerComponent } from './url-shortener/url-shortener.component';
 import { UrlGenerateComponent } from './url-shortener/components/url-generate/url-generate.component';
 import { UrlListComponent } from './url-shortener/components/url-list/url-list.component';
 import { RedirectComponent } from './redirect/redirect.component';
+import { UrlEditComponent } from './url-shortener/components/url-edit/url-edit.component';
 
 import { UrlService } from './url-shortener/services/url.service';
 
@@ -19,6 +20,7 @@ import { UrlService } from './url-shortener/services/url.service';
     UrlShortenerComponent,
     UrlGenerateComponent,
     UrlListComponent,
+    UrlEditComponent,
     RedirectComponent,
   ],
   imports: [

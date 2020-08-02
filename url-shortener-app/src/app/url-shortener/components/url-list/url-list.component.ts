@@ -21,6 +21,8 @@ import { takeUntil } from 'rxjs/operators';
     message: string = null;
     appUrl: string = environment.appUrl;
 
+    editingUrl: url = null;
+
     constructor(
         private urlService: UrlService
     ) {}
@@ -30,16 +32,34 @@ import { takeUntil } from 'rxjs/operators';
         this.destroy$.unsubscribe();
     }
 
-    updateUrl(url: url) {
-
+    editUrl(url: url) {
+        // We want a copy so as to not effect the original in case of cancellation of edit
+        let urlToEdit: url = {
+            id: url.id,
+            shortenedUrl: url.shortenedUrl,
+            actualUrl: url.actualUrl,
+            accessCount: url.accessCount
+        }
+        this.editingUrl = urlToEdit;
     }
 
     deleteUrl(id: number) {
         this.urlService.delete(id).pipe(takeUntil(this.destroy$)).subscribe(() => {
             this.message = "Url deleted";
-            this.rebindCallback.next(true);
+            this.doRebindCallback()
         }, () => {
             this.message = "Could not delete url";
         });
+    }
+
+    doRebindCallback() {
+        this.rebindCallback.next(true);
+    }
+
+    updateCallback(rebind: boolean) {
+        this.editingUrl = null;
+        if (rebind) {
+            this.doRebindCallback();
+        }
     }
 }
