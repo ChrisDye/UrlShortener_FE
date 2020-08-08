@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
 
-  apiEndpoint: 'https://localhost:44317/url',
+  apiEndpoint: 'https://urlshortenercd.azurewebsites.net/url',
   appUrl: 'localhost:4200/'
 };
 

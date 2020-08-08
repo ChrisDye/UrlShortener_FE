@@ -109,6 +109,14 @@ BUTTON CSS STYLES
     background-color: rgb(190, 40, 20);
 }
 
+.btn.inactive {
+    background-color: gray;
+}
+
+.btn.inactive:hover {
+    opacity: 1;
+    cursor: default;
+}
 
 /*
 EDIT CSS STYLES

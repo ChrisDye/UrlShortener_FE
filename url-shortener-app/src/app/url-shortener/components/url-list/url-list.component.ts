@@ -36,6 +36,7 @@ import { takeUntil } from 'rxjs/operators';
         // We want a copy so as to not effect the original in case of cancellation of edit
         let urlToEdit: url = {
             id: url.id,
+            friendlyName: url.friendlyName,
             shortenedUrl: url.shortenedUrl,
             actualUrl: url.actualUrl,
             accessCount: url.accessCount

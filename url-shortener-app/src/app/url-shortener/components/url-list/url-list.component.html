@@ -2,14 +2,14 @@
 <div class="urlContainer">
     <div class="table">
         <div class="row header">
-            <div class="cell"><strong>Actual Url</strong></div>
+            <div class="cell"><strong>Name/Url</strong></div>
             <div class="cell"><strong>Shortened Url</strong></div>
             <div class="cell"><strong>Times Accessed</strong></div>
             <div class="cell"></div>
         </div>
 
         <div class="row" *ngFor="let url of urls.items">
-            <div class="cell">{{url.actualUrl}}</div>
+            <div class="cell">{{url.friendlyName === '' || url.friendlyName === null ? url.actualUrl : url.friendlyName}}</div>
             <div class="cell"><a [routerLink]="'/' + url.shortenedUrl">{{appUrl + url.shortenedUrl}}</a></div>
             <div class="cell">{{url.accessCount}}</div>
             <div class="cell btnActions">

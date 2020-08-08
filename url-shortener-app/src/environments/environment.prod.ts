@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
 
-  apiEndpoint: 'https://localhost:44317/url',
-  appUrl: 'localhost:4200/'
+  apiEndpoint: 'https://urlshortenercd.azurewebsites.net/url',
+  appUrl: 'https://urlshortenerapp.z6.web.core.windows.net/'
 };

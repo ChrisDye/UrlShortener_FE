@@ -15,7 +15,7 @@ import { takeUntil } from 'rxjs/operators';
     urls: paginated<url> = null;
 
     page: number = 1;
-    pageSize: number = 10;
+    pageSize: number = 5;
 
     constructor(
         private urlService: UrlService
@@ -39,13 +39,17 @@ import { takeUntil } from 'rxjs/operators';
     }
 
     nextPage() {
-        this.page = this.page + 1;
-        this.rebindList();
+        if (this.urls.hasNextPage) {
+            this.page = this.page + 1;
+            this.rebindList();
+        }
     }
 
     prevPage() {
-        this.page = this.page - 1;
-        this.rebindList();
+        if (this.urls.hasPreviousPage) {
+            this.page = this.page - 1;
+            this.rebindList();
+        }
     }
     
 }
